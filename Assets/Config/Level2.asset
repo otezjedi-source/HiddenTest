@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855ee9b0b096c4a27807af357f4d8c3a, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
+  backgroundRef:
+    m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+    m_SubObjectName: Background
+    m_SubObjectType: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  timerSec: 60
+  maxCurrentItems: 4
+  itemDisplayMode: 1
+  items:
+  - id: camera
+    displayName: "\u0412\u0438\u0434\u0435\u043E\u043A\u0430\u043C\u0435\u0440\u0430"
+    isActive: 0
+    icon: {fileID: 3810624072772583948, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u0432\u0438\u0434\u0435\u043E\u043A\u0430\u043C\u0435\u0440\u0430"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - id: candlestick
+    displayName: "\u041F\u043E\u0434\u0441\u0432\u0435\u0447\u043D\u0438\u043A"
+    isActive: 1
+    icon: {fileID: -2167552072759052910, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u043F\u043E\u0434\u0441\u0432\u0435\u0447\u043D\u0438\u043A"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - id: jumpRope
+    displayName: "\u0421\u043A\u0430\u043A\u0430\u043B\u043A\u0430"
+    isActive: 1
+    icon: {fileID: -6064216500617668172, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u0441\u043A\u0430\u043A\u0430\u043B\u043A\u0430"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  - id: marmalade
+    displayName: "\u041C\u0430\u0440\u043C\u0435\u043B\u0430\u0434"
+    isActive: 1
+    icon: {fileID: -5679152228734512801, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u043C\u0430\u0440\u043C\u0435\u043B\u0430\u0434"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - id: notebook
+    displayName: "\u0411\u043B\u043E\u043A\u043D\u043E\u0442"
+    isActive: 1
+    icon: {fileID: -8241527234352580297, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u0431\u043B\u043E\u043A\u043D\u043E\u0442"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - id: rollerSkates
+    displayName: "\u0420\u043E\u043B\u0438\u043A\u0438"
+    isActive: 1
+    icon: {fileID: -5199727091016625146, guid: e6be945d007d14efca4d4cfa35191d28, type: 3}
+    itemRef:
+      m_AssetGUID: e6be945d007d14efca4d4cfa35191d28
+      m_SubObjectName: "\u0440\u043E\u043B\u0438\u043A\u0438"
+      m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
