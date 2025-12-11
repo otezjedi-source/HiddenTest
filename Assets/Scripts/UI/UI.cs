@@ -1,30 +1,22 @@
 using UnityEngine;
 using DG.Tweening;
 using VContainer;
-using VContainer.Unity;
 
 public class UI : MonoBehaviour
 {
     [SerializeField] private GameObject loadingScreen;
-    [SerializeField] private MainMenuScreen mainMenuScreen;
-    [SerializeField] private GameScreen gameScreen;
-    [SerializeField] private SettingsPanel settingsPanel;
-    [SerializeField] private VictoryScreen victoryScreen;
-    [SerializeField] private DefeatScreen defeatScreen;
+    [SerializeField] private GameObject mainMenuScreen;
+    [SerializeField] private GameObject gameScreen;
+    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private GameObject defeatScreen;
     [SerializeField] private GameObject endScreen;
+
+    [Inject] private readonly GameState gameState;
 
     void Start()
     {
         HideAll();
-    }
-
-    public void Register(IContainerBuilder builder)
-    {
-        builder.RegisterComponent(mainMenuScreen).AsSelf();
-        builder.RegisterComponent(gameScreen).AsSelf();
-        builder.RegisterComponent(settingsPanel).AsSelf();
-        builder.RegisterComponent(victoryScreen).AsSelf();
-        builder.RegisterComponent(defeatScreen).AsSelf();
     }
 
     public void ShowLoadingScreen()
@@ -36,18 +28,26 @@ public class UI : MonoBehaviour
     public void ShowMainMenuScreen()
     {
         HideAll();
-        mainMenuScreen.gameObject.SetActive(true);
+        mainMenuScreen.SetActive(true);
+        gameState.GoToMainMenu();
     }
 
     public void ShowGameScreen()
     {
         HideAll();
-        gameScreen.gameObject.SetActive(true);
+        gameScreen.SetActive(true);
     }
 
     public void ShowSettingsPanel()
     {
-        settingsPanel.gameObject.SetActive(true);
+        settingsPanel.SetActive(true);
+        gameState.Pause();
+    }
+
+    public void HideSettingsPanel()
+    {
+        settingsPanel.SetActive(false);
+        gameState.Resume();
     }
     
     public void ShowGameResult(GamePlay.Result result)
@@ -61,7 +61,7 @@ public class UI : MonoBehaviour
     private void ShowVictoryScreen()
     {
         HideAll();
-        victoryScreen.gameObject.SetActive(true);
+        victoryScreen.SetActive(true);
         victoryScreen.transform.localScale = Vector3.zero;
         victoryScreen.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
     }
@@ -69,7 +69,7 @@ public class UI : MonoBehaviour
     private void ShowDefeatScreen()
     {
         HideAll();
-        defeatScreen.gameObject.SetActive(true);
+        defeatScreen.SetActive(true);
         defeatScreen.transform.localScale = Vector3.zero;
         defeatScreen.transform.DOScale(1f, 0.5f).SetEase(Ease.OutBack);
     }
@@ -82,11 +82,11 @@ public class UI : MonoBehaviour
     private void HideAll()
     {
         loadingScreen.SetActive(false);
-        mainMenuScreen.gameObject.SetActive(false);
-        gameScreen.gameObject.SetActive(false);
-        settingsPanel.gameObject.SetActive(false);
-        victoryScreen.gameObject.SetActive(false);
-        defeatScreen.gameObject.SetActive(false);
+        mainMenuScreen.SetActive(false);
+        gameScreen.SetActive(false);
+        settingsPanel.SetActive(false);
+        victoryScreen.SetActive(false);
+        defeatScreen.SetActive(false);
         endScreen.SetActive(false);
     }
 }

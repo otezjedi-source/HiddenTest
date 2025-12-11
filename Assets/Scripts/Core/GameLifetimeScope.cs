@@ -5,7 +5,6 @@ using VContainer.Unity;
 public class GameLifetimeScope : LifetimeScope
 {
     [SerializeField] private GameConfig gameConfig;
-    [SerializeField] private UI ui;
     
     protected override void Configure(IContainerBuilder builder)
     {
@@ -20,8 +19,13 @@ public class GameLifetimeScope : LifetimeScope
         builder.Register<ISaveManager, PlayerPrefsSaveManager>(Lifetime.Singleton);
 
         builder.RegisterComponentInHierarchy<GameScene>();
-        builder.RegisterComponent(ui).AsSelf();
-        ui.Register(builder);
+
+        builder.RegisterComponentInHierarchy<UI>();
+        builder.RegisterComponentInHierarchy<MainMenuScreen>();
+        builder.RegisterComponentInHierarchy<GameScreen>();
+        builder.RegisterComponentInHierarchy<VictoryScreen>();
+        builder.RegisterComponentInHierarchy<DefeatScreen>();
+        builder.RegisterComponentInHierarchy<SettingsPanel>();
 
         builder.RegisterEntryPoint<Startup>();
     }

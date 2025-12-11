@@ -4010,7 +4010,6 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   gameConfig: {fileID: 11400000, guid: a20e0edd6ff864b5f8b5a155a9bd4204, type: 2}
-  ui: {fileID: 1546590194}
 --- !u!4 &1351391490
 Transform:
   m_ObjectHideFlags: 0
@@ -4663,11 +4662,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   loadingScreen: {fileID: 888481027}
-  mainMenuScreen: {fileID: 597935265}
-  gameScreen: {fileID: 377582971}
-  settingsPanel: {fileID: 1780496305}
-  victoryScreen: {fileID: 1809723613}
-  defeatScreen: {fileID: 2052716098}
+  mainMenuScreen: {fileID: 597935260}
+  gameScreen: {fileID: 377582969}
+  settingsPanel: {fileID: 1780496299}
+  victoryScreen: {fileID: 1809723608}
+  defeatScreen: {fileID: 2052716093}
   endScreen: {fileID: 1224610583}
 --- !u!1 &1587941834
 GameObject:

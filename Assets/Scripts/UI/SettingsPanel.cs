@@ -12,7 +12,6 @@ public class SettingsPanel : MonoBehaviour
     [SerializeField] private Button btnClose;
 
     [Inject] private readonly Settings settings;
-    [Inject] private readonly GameState gameState;
     [Inject] private readonly GamePlay gamePlay;
     [Inject] private readonly UI ui;
 
@@ -42,7 +41,6 @@ public class SettingsPanel : MonoBehaviour
         var mode = settings.ItemsDisplayMode.Value;
         var idx = ItemDisplayMode.ToIndex(mode);
         itemsDisplayModeDropdown.SetValueWithoutNotify(idx);
-        gameState.Pause();
     }
 
     private void OnItemsDisplayModeChange(int value)
@@ -54,14 +52,12 @@ public class SettingsPanel : MonoBehaviour
     private void OnQuitClick()
     {
         gamePlay.QuitGame();
-        gameState.GoToMainMenu();
         ui.ShowMainMenuScreen();
     }
 
     private void OnClose()
     {
-        gameObject.SetActive(false);
-        gameState.Resume();
+        ui.HideSettingsPanel();
     }
     
     private void OnDestroy()
