@@ -35,5 +35,6 @@ public class DefeatScreen : MonoBehaviour
     private void OnBtnQuitClick()
     {
         gameState.GoToMainMenu();
+        ui.ShowMainMenuScreen();
     }
 }

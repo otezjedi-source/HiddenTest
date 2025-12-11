@@ -2,6 +2,9 @@ using System;
 using Cysharp.Threading.Tasks;
 using UniRx;
 using VContainer;
+#if !UNITY_EDITOR
+using UnityEngine;
+#endif
 
 public class GameState : IDisposable
 {
