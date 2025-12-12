@@ -13,6 +13,7 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject endScreen;
 
     [Inject] private readonly GameState gameState;
+    [Inject] private readonly GameScene gameScene;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class UI : MonoBehaviour
     public void ShowGameScreen()
     {
         HideAll();
+        gameScene.gameObject.SetActive(true);
         gameScreen.SetActive(true);
     }
 
@@ -76,6 +78,7 @@ public class UI : MonoBehaviour
 
     public void ShowEndScreen()
     {
+        HideAll();
         endScreen.SetActive(true);
     }
 
@@ -88,5 +91,6 @@ public class UI : MonoBehaviour
         victoryScreen.SetActive(false);
         defeatScreen.SetActive(false);
         endScreen.SetActive(false);
+        gameScene.gameObject.SetActive(false);
     }
 }
